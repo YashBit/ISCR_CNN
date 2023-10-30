@@ -1,0 +1,42 @@
+
+
+STAGE 1A: EXPLORATION OF MULTIPLE TECHNIQUES
+
+
+*************************************************************
+
+1. SEGMENTATION → 
+
+    CORE QUESTIONS:
+
+    1. WHICH SEGMENTATION MODEL IS THE BEST FOR OUR IMAGES 
+    2. WHICH IS THE BEST WAY TO IMPLEMENT THEM
+
+*************************************************************
+
+    1. SEGMENTATION → BOUNDED BOXES 
+        1.1. TESTING OF SOTA METHODS EMPIRICALLY (HIGH CONTRAST)
+            SEGMENTATION: SOTA 
+                1. U-NET
+                2. DeepLab
+                3. Mask R-CNN
+                4. PSPNet
+                5. FCN
+                6. HRNet
+
+*************************************************************
+
+*************************************************************
+
+HOW DO I FIND THE GEOMETRIC CENTER OF AN IMAGE? 
+
+
+*************************************************************
+
+
+2. HOW TO FIND GEOMETRIC CENTER FOR AN IMAGE ? DO I USE ANOTHER CNN?
+    1. CARTESIAN PLANE DEVELOP -> WHERE AND HOW DO I 
+    2. ORIENTATION → TRAINING IMAGES (0)
+        1. CARTESIAN 
+    3. IMAGE → CARTESIAN PLANE (TILT) 
+        1. ORIENTATION
