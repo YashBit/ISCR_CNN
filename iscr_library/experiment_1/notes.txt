@@ -1,0 +1,116 @@
+
+WANDB : 
+
+GROUP NAME: ISCR 
+
+https://wandb.ai/iscr 
+
+
+HIGH LEVEL: (NO COGNIITVE MODELS)
+
+
+
+1. model (Multiple written below)
+    1.a Parameters Needed: ImageNet Pretrain (Y/N)
+    1.b Finetuning (Y/N, Dataset, Params)
+    1.c Image (Mini Datasets (According Need))
+2. Results:
+    2.a Save Model Weights (Online)
+    2.b Weights and Biases - All Included 
+3. Ablation Testing: 
+    3.a SCRIPT -> (PARAMS: LAYER NUMBER)
+        1. Measure performance 
+        2. What are those metrics?
+        3. 
+
+4. Build Charts like Paper 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Experiment 1: Compound vs Continuous Letters
+
+1. Cognitive Science Concept derived from  Hypothesis
+    1. Hypothesis: Orientation of continuous and compound letters is not represented in the same layer (Keyword → layer)
+2. Human Experimental Suite / Data
+    1. 5.8/5.9 → From Davida 
+3. Computational Experiment → #5 
+    1. Relation #2 AND #1
+        1. DNNs represent the visual stream 
+            1. Compound vs Non Compound Shape 
+    2. Assumptions which relate to the cognitive concept
+        1. DNNs represent visual stream
+    3. Needs to prove/relative #1 -> Cognitive Science Concept
+        1. **LATER** 
+4. Bring Psychological Representations closer to Computational Experiment Closer
+    1. **LATER** 
+5. THEORY FOR EXPERIMENT → REFINE WITH GILLES 
+    1. Davida cannot identify direction of continuous shapes
+    2. But she can identify direction of compound shapes 
+    3. Which implies
+        1. That there are different visual processing streams for subunits and the highest level unit 
+6. Experiment Details → WRITE DOWN CORE IMPLICATIONS OF TRAJECTORIES ( HOW THEY RELATE TO COGNITIVE SCIENCE CONCEPT):
+    1. On hold:
+        1. Train Model 1 on Compound Exemplar
+            1. Not shown the continuous exemplar 
+        2. Train Model 2 on Continuous Exemplar
+            1. Not shown the compound exemplar 
+    2. Train Model 3 (HUMAN CAPABILITY) on Compound and Continuous B
+        1. Implies Both Exemplars are of same category
+            1. Compound/Continuous B are the SAME
+            2. **CORE IMPLICATIONS AND COGNITIVE SCIENCE CONCEPT** 
+                1. EXPLICITLY ENCODED TO THE MACHINE Continuous and Compound exemplars are equivalent
+                    1. Cognitive Science concept → HUMAN BEINGS understand compound/cont b to be the same 
+    3. Test Model 3 on Compound/Continuous Exemplars
+        1. Ablate Layers (See Performance Drop)
+            1. For compound/continuous separately 
+
+## Engineering Methodology:
+
+1. Models other than DNNs:
+    1. Shallow Models:
+        1. Pixelwise 
+        2. GaborJet
+        3. Histogram of Oriented Gradient
+        4. Pyramid Histogram of Oriented Gradient 
+        5. Pyramid Histogram of Visual Words
+    2. HMAX Models 
+        1. HMAX 99’ 
+        2. HMIN
+        3. HMAX-PNAS
+2. Deep Models:
+    1. Models:
+        1. GoogleLeNet
+        2. VGG
+        3. ResNet 
+    2. Image Set:
+        1. Compound/Continuous Set 
+            1. 2000 Images for each letter 
+                1. 1000 for continuous 
+                2. 1000 for compound
+            2. Total:
+                1. 52,000 Images 
+    3. **IMPORTANT DECISION: TRAINING**
+        1. PRETRAINED ON IMAGENET + FINETUNED ON OUR USECASE 
+        2. FULLY TRAINED ONLY ON OUR USECASE, NO IMAGENET WEIGHTS 
+3. EVALUATION:
+    1. Bar chart of performance like paper 1
+    2. Ablation Testing:
+        1. Bar Performance
+        2. Compound vs Continuous Shapes 
+        3. Each model and each layer frozen
+            1. Then see performance charts
