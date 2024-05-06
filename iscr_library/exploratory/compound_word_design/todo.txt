@@ -1,0 +1,6 @@
+It is important to understand the following:
+
+
+1. How have compound words been designed till now? What is the SOTA?
+2. What was the intuition behind it?
+3. 
