@@ -15,6 +15,7 @@ from torch.utils.data import DataLoader
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import cv2
+from model import Model
 
 import glob
 from tqdm import tqdm
@@ -115,7 +116,7 @@ test_loader = DataLoader(
 
 
 #Any model class imported here 
-model = MnistCNNModel()
+model = Model('vgg16',26,True)
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
