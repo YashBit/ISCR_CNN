@@ -60,7 +60,7 @@ def createImagesAndLabels(path_to_train_images, path_to_test_images):
     test_image_paths = list(flatten(test_image_paths))
 
     print("Train size: {}\nValid size: {}\nTest size: {}".format(len(train_image_paths), len(valid_image_paths), len(test_image_paths)))
-    return (train_image_paths, valid_image_paths, )
+    return (train_image_paths, valid_image_paths,test_image_paths )
 
 
 #######################################################
@@ -90,6 +90,9 @@ def visualize_augmentations(dataset, idx=0, samples=10, cols=5, random_img = Fal
 #######################################################
 #                  Define Dataloaders
 #######################################################
+train_path= '/images/train/'
+test_path = '/images/test/'
+train_image_paths, valid_image_paths,test_image_paths = createImagesAndLabels(train_path, test_path)
 
 train_dataset = CustomDatasetFromFile(train_image_paths,train_transforms)
 valid_dataset = CustomDatasetFromFile(valid_image_paths,test_transforms) #test transforms are applied
@@ -109,6 +112,7 @@ valid_loader = DataLoader(
 test_loader = DataLoader(
     test_dataset, batch_size=64, shuffle=False
 )
+
 
 #Any model class imported here 
 model = MnistCNNModel()
