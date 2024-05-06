@@ -14,15 +14,15 @@ STAGE 1A: EXPLORATION OF MULTIPLE TECHNIQUES
 
 *************************************************************
 
-    1. SEGMENTATION → BOUNDED BOXES 
-        1.1. TESTING OF SOTA METHODS EMPIRICALLY (HIGH CONTRAST)
-            SEGMENTATION: SOTA 
-                1. U-NET -> FOR OUR WORK 
-                2. DeepLab
-                3. Mask R-CNN
-                4. PSPNet
-                5. FCN
-                6. HRNet
+1. SEGMENTATION → BOUNDED BOXES 
+    1.1. TESTING OF SOTA METHODS EMPIRICALLY (HIGH CONTRAST)
+        SEGMENTATION: SOTA 
+            1. U-NET -> FOR OUR WORK 
+            2. DeepLab
+            3. Mask R-CNN
+            4. PSPNet
+            5. FCN
+            6. HRNet
 
 *************************************************************
 
