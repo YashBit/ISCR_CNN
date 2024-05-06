@@ -1,0 +1,15 @@
+# Let's look at the permutations of experiments we need to start with:
+
+
+BUT BEFORE THAT, DATASET needs to be created. 
+
+THESE ARE NON COMPOUND WORDS
+
+                                    FINETUNE, NO FINETUNE
+
+UNTRAINED SIMPLE CNN MODEL, 
+CNN PRETRAINED ON TEXT,
+CNN PRETRAINED ON IMAGENET,
+TRAINED ON SIMPLE WORLD OF DAVIDA, 
+
+ https://www.youtube.com/watch?v=UYySvyc4M68 
