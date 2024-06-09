@@ -1,6 +1,12 @@
 from pylatex import Document, NoEscape
 
-def create_latex_document():
+
+
+def create_normal_alphabet(letter):
+    # Create a Document object
+    pass 
+
+def create_trace_alphabet(letter):
     # Create a Document object
     doc = Document()
     doc.packages.append(NoEscape(r'\usepackage[T1]{fontenc}'))
@@ -17,10 +23,12 @@ def create_latex_document():
     doc.append(NoEscape(setline_command))
     doc.append(NoEscape(r'\begin{document}'))
     doc.append(NoEscape(r'\normalsize'))
-    doc.append(NoEscape(r'\setline{35}{b}\vspace{1cm}'))
+    doc.append(NoEscape(r'\setline{35}{' + letter + r'}\vspace{1cm}'))  # Use the letter variable
     doc.append(NoEscape(r'\end{document}'))
-    pdf_filename = 'final_output.pdf'
+    pdf_filename = 'letter'
     doc.generate_pdf(pdf_filename, clean_tex=False, clean=False)
 
 if __name__ == "__main__":
-    create_latex_document()
+    alphabets = "abcdefghijklmnopqrstuvwxyz"
+    for letter in alphabets:
+        create_trace_image(letter)
