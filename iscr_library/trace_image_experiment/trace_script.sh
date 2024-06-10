@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 # ONLY LOOK AT COMMANDS WHICH
 # \usepackage
 fonts=(
@@ -85,8 +83,6 @@ fonts=(
 "pandora"
 )
 
-
-
 for letter in {a..z}
 do
     for font in "${fonts[@]}"
@@ -111,8 +107,8 @@ blackletter_fonts=(
 "QTBrushStroke",
 "QTCaligulatype",
 "QTCascadetype",
-"QTChanceryType",
-)
+"QTChanceryType")
+
 for letter in {a..z}
 do
     for font in "${blackletter_fonts[@]}"

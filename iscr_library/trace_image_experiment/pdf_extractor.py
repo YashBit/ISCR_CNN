@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     # Extract the image with padding
     extract_image_with_padding(image_path, output_image_path, 
-                               left_padding=10, right_padding=40, 
+                               left_padding=10, right_padding=48, 
                                top_padding=10, bottom_padding=60)
 
     # Clean up the intermediate image file
