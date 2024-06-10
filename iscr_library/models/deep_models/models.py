@@ -4,7 +4,7 @@
 
 # /path/to/dataset/
 #     ├── class1/
-#     │   ├── image1.jpg
+#     │   ├── image1.jpg (TRACE AND NORMAL ARE IN ONE CLASS - a || TRACE AND NORMAL ARE IN DIFFERENT CLASS - a_trace, a_normal)
 #     │   ├── image2.jpg
 #     │   └── ...
 #     ├── class2/
@@ -241,7 +241,7 @@ hyparams = {
 }
 
 model_instance = Model(
-    model_name='vgg16',
+    model_name='vgg16', # resnet50, googlenet
     n_classes=3,
     train=True,
     pretrain_imagenet=True,
