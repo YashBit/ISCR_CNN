@@ -1,6 +1,17 @@
 from pylatex import Document, NoEscape
 import argparse  
 
+    """
+     RUN THROUGH 200 FONTS, 5 TYPEFACES 
+     
+     1. normal
+     2. semibold
+     3. italic 
+     4. slanted 
+     5. bold italic 
+
+    """
+
 def create_trace_alphabet(letter, font_name):
     # Create a Document object
     doc = Document()
