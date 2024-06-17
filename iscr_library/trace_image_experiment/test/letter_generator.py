@@ -5,7 +5,7 @@ def create_pdf(letter, font_name, typeface, command):
     doc = Document()
     doc.packages.append(NoEscape(r'\usepackage[T1]{fontenc}'))
     doc.packages.append(NoEscape(r'\usepackage[utf8]{inputenc}'))
-    doc.packages.append(NoEscape(r'\usepackage{lmodern}'))
+    doc.packages.append(NoEscape(r'\usepackage{' + font_name + '}'))
     doc.packages.append(NoEscape(r'\usepackage{textcomp}'))
     doc.packages.append(NoEscape(r'\usepackage{lastpage}'))
     doc.packages.append(NoEscape(r'\usepackage{graphicx}'))
@@ -38,6 +38,7 @@ def letter_generator(letter, font_name, typeface):
         "slanted": r'\textsl{\setline{35}{%s}}'
     }
     print(f"Typeface received: {typeface}")
+    print(f"Font received: {font_name}")
     if typeface in typefaces:
         create_pdf(letter, font_name, typeface, typefaces[typeface])
     else:
