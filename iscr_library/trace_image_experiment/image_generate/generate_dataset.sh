@@ -33,3 +33,17 @@ do
         done
     done
 done
+
+for letter in "${letters[@]}"
+do
+    for font in "${fonts[@]}"
+    do
+        for typeface in "${typefaces[@]}"
+        do
+            for size in "${sizes[@]}"
+            do
+                python trace_generator.py --letter $letter --font $font --typeface $typeface --size $size
+            done
+        done
+    done
+done
