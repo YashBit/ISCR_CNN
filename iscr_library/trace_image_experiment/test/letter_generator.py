@@ -1,17 +1,15 @@
 from pylatex import Document, NoEscape
 import argparse
 
-def create_pdf(letter, font_name, typeface, command):
+def create_pdf(letter, font_name, typeface, command, size):
     doc = Document()
+    
     doc.packages.append(NoEscape(r'\usepackage[T1]{fontenc}'))
     doc.packages.append(NoEscape(r'\usepackage[utf8]{inputenc}'))
     doc.packages.append(NoEscape(r'\usepackage{' + font_name + '}'))
     doc.packages.append(NoEscape(r'\usepackage{textcomp}'))
     doc.packages.append(NoEscape(r'\usepackage{lastpage}'))
     doc.packages.append(NoEscape(r'\usepackage{graphicx}'))
-
-    # Add the font package
-    doc.packages.append(NoEscape(r'\usepackage{' + font_name + '}'))
 
     setline_command = r"""
     \newcommand{\setline}[2]{%
@@ -22,25 +20,25 @@ def create_pdf(letter, font_name, typeface, command):
 
     doc.append(NoEscape(r'\begin{document}'))
     doc.append(NoEscape(r'\normalsize'))
-    doc.append(NoEscape(command % letter))
+    doc.append(NoEscape(command % (size, letter)))
     doc.append(NoEscape(r'\end{document}'))
 
-    pdf_filename = f"{letter}_{font_name}_{typeface}"
+    pdf_filename = f"{letter}_{font_name}_{typeface}_{size}"
     doc.generate_pdf(pdf_filename, clean_tex=False, clean=False)
 
-def letter_generator(letter, font_name, typeface):
+def letter_generator(letter, font_name, typeface, size):
     typefaces = {
-        "normal": r'\textnormal{\setline{35}{%s}}',
-        "italic": r'\textit{\setline{35}{%s}}',
-        "bold": r'\textbf{\setline{35}{%s}}',
-        "bolditalic": r'\textbf{\textit{\setline{35}{%s}}}',
-        "smallcaps": r'\textsc{\setline{35}{%s}}',
-        "slanted": r'\textsl{\setline{35}{%s}}'
+        "normal": r'\textnormal{\setline{%s}{%s}}',
+        "italic": r'\textit{\setline{%s}{%s}}',
+        "bold": r'\textbf{\setline{%s}{%s}}',
+        "bolditalic": r'\textbf{\textit{\setline{%s}{%s}}}',
+        "smallcaps": r'\textsc{\setline{%s}{%s}}',
+        "slanted": r'\textsl{\setline{%s}{%s}}'
     }
     print(f"Typeface received: {typeface}")
     print(f"Font received: {font_name}")
     if typeface in typefaces:
-        create_pdf(letter, font_name, typeface, typefaces[typeface])
+        create_pdf(letter, font_name, typeface, typefaces[typeface], size)
     else:
         raise ValueError(f"Unknown typeface: {typeface}")
 
@@ -49,5 +47,6 @@ if __name__ == "__main__":
     parser.add_argument('--letter', type=str, required=True, help='Letter to be traced (a-z)')
     parser.add_argument('--font', type=str, required=True, help='Font name')
     parser.add_argument('--typeface', type=str, required=True, choices=['normal', 'italic', 'bold', 'bolditalic', 'smallcaps', 'slanted'], help='Typeface (normal, italic, bold, bolditalic, smallcaps, slanted)')
+    parser.add_argument('--size', type=float, required=True, help='Size of the letter')
     args = parser.parse_args()
-    letter_generator(args.letter, args.font, args.typeface)
+    letter_generator(args.letter, args.font, args.typeface, args.size)
